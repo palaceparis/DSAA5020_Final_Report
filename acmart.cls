@@ -680,8 +680,9 @@
   \SetWatermarkFontSize{0.5in}
   \SetWatermarkColor[gray]{.9}
   \SetWatermarkText{\parbox{12em}{\centering
-      Unpublished working draft.\\
-      Not for distribution.}}
+      % Unpublished working draft.\\
+      % Not for distribution.
+      }}
 \else
   \if@ACM@sigchiamode
     \if@ACM@nonacm\else
