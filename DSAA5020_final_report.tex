@@ -1,5 +1,6 @@
 \documentclass[sigconf, authordraft]{acmart}
 
+
 \AtBeginDocument{%
 \providecommand{\BibTeX}{{%
 \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
@@ -10,7 +11,8 @@
 \acmDOI{}
 
 %% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[DSAA5020 Coursework]{}{May 2023}{HKUSTGZ}
+\acmConference[DSAA5020
+Coursework]{}{May 2023}{HKUSTGZ}
 %
 %  Uncomment \acmBooktitle if th title of the proceedings is different
 %  from ``Proceedings of ...''!
@@ -20,11 +22,6 @@
 \acmPrice{}
 \acmISBN{}
 
-%%
-%% Submission ID.
-%% Use this when submitting an article to a sponsored event. You'll
-%% receive a unique submission ID from the organizers
-%% of the event, and this ID should be used as the parameter to this command.
 %%\acmSubmissionID{123-A56-BU3}
 
 %%
@@ -68,11 +65,11 @@
 %%
 %% end of the preamble, start of the body of the document source.
 \begin{document}
-%%  KIND TEST
-%%
-%% The "title" command has an optional parameter,
-%% allowing the author to define a "short title" to be used in page headers.
-\title{The Name of the Title is Hope}
+	%%  KIND TEST
+	%%
+	%% The "title" command has an optional parameter,
+	%% allowing the author to define a "short title" to be used in page headers.
+	\title{The Name of the Title is Hope}
 	%%
 	%% The "title" command has an optional parameter,
 	%% allowing the author to define a "short title" to be used in page headers.
@@ -87,7 +84,8 @@
 	%% used to denote shared contribution to the research.
 
 	\author{Xiao FANG, Hanyu GONG, Mingze GONG}
-	
+
+
 	%%
 	%% By default, the full list of authors will be used in the page
 	%% headers. Often, this list is too long, and will overlap
@@ -138,8 +136,7 @@
 	\begin{teaserfigure}
 		\includegraphics[width=\textwidth]{figures/total_carbon_emissions.png}
 		\caption{Total Carbon Emissions across Investigated Sectors}
-		\Description{}
-		\label{fig:teaser}
+		\Description{} \label{fig:teaser}
 	\end{teaserfigure}
 
 	\received{20 February 2007} \received[revised]{12 March 2009} \received[accepted]{5 June 2009}
@@ -151,47 +148,99 @@
 
 
 	\section{Introduction}
-	ACM's consolidated article template, introduced in 2017, provides a consistent
-	\LaTeX\ style for use across ACM publications, and incorporates accessibility
-	and metadata-extraction functionality necessary for future Digital Library
-	endeavors. Numerous ACM and SIG-specific \LaTeX\ templates have been examined,
-	and their unique features incorporated into this single new template.
+	Global warming, far from being a recent phenomenon, can be perceived from another
+	point as a persisting dilemma that continues to impact both anthropogenic development
+	and the natural ecosystem. The primary agent provoking global warming is
+	attributed to the emissions of greenhouse gases. Empirical studies confirm that
+	carbon dioxide holds the dubious distinction of being the most abundant greenhouse
+	gas in the atmosphere, contributing a staggering 72\% to global warming.
 
-	If you are new to publishing with ACM, this document is a valuable guide to the
-	process of preparing your work for publication. If you have published with ACM
-	before, this document provides insight and instruction into more recent changes
-	to the article template.
+	However, it is noteworthy to mention that China ranks as the preeminent
+	emitter of carbon dioxide on a global scale, discharging in excess of 6 billion
+	tonnes of carbon dioxide annually. Hence, addressing this crisis,
+	intrinsically connected to the existential fate of mankind, became a priority for
+	China. As a concrete commitment to this endeavor, President Xi Jinping, in
+	September 2020, proclaimed China's aim to "reach a peak in CO2 emissions by
+	2030 and accomplish carbon neutrality by 2060". The challenge of achieving
+	carbon neutrality is multifarious, necessitating a holistic approach,
+	encompassing policy, economy, culture, and technology. This paper opts to
+	focus on the forecasting of carbon emissions, a crucial foundational element for
+	strategic decision-making. Proficient predictions furnish invaluable data that
+	bolsters informed decision-making. Conversely, if the prognosis proves
+	inaccurate, ensuing plans may fall into the domain of impracticality.
 
-	The ``\verb|acmart|'' document class can be used to prepare articles for any ACM
-	publication --- conference or journal, and for any stage of publication, from review
-	to final ``camera-ready'' copy, to the author's own version, with {\itshape very}
-	few changes to the source.
+	The stakeholders who stand most directly impacted by these emissions include governments,
+	investors, and researchers. Government bodies, equipped with foresight into future
+	carbon emissions, can effectuate more meaningful change in climate policy, emergency
+	development, and global cooperation. Conversely, researchers and investors, informed
+	by predictive results, can more effectively design mechanisms such as the
+	Emissions Trading System, Carbon Pricing System, and related technologies. Consequently,
+	the act of forecasting carbon emissions carries significant implications for
+	subsequent research.
 
-	\section{Template Overview}
-	As noted in the introduction, the ``\verb|acmart|'' document class can be used
-	to prepare many different kinds of documentation --- a double-blind initial
-	submission of a full-length technical paper, a two-page SIGGRAPH Emerging Technologies
-	abstract, a ``camera-ready'' journal article, a SIGCHI Extended Abstract, and
-	more --- all by selecting the appropriate {\itshape template style} and
-	{\itshape template parameters}.
+	Since the year 2011, endeavors have been made to utilize logistic equations in
+	order to prognosticate China's carbon emissions. At present, the primary methodologies
+	employed for the prediction of CO2 emissions can be categorized into three principal
+	clusters, specifically, statistical analysis models, non-linear intelligent
+	models, and grey prediction techniques. Statistical models offer ease of
+	application, yet they necessitate the collection of ample historical data before
+	the models can undergo training. Conversely, machine learning frequently outperforms
+	in forecasting relative to conventional statistical methods.
 
-	This document will explain the major features of the document class. For further
-	information, the {\itshape \LaTeX\ User's Guide} is available from
-	\url{https://www.acm.org/publications/proceedings-template}.
+	This study implements the Graph Neural Network (GNN) approach, presenting
+	multiple advantages: Firstly, GNNs are capable of effectively modelling
+	spatial and temporal correlations. Secondly, GNNs have the capacity to
+	integrate additional contextual data, such as socio-economic and policy factors.
+	Thirdly, GNNs can yield an interpretable model structure, thus enabling
+	researchers to derive insights into the relationships between various factors
+	and their subsequent impact on carbon emissions.
+
+	At this juncture, GNNs have not been extensively explored in the context of predicting
+	carbon emissions. Hence, future research should pivot its focus towards delving
+	into the application of GNNs in carbon emissions forecasting. The unique
+	benefits offered by GNNs should be leveraged to construct models that are both
+	highly accurate and interpretable.
+
+	\section{Data Description}
+	Transitioning now to our research endeavor, the initial phase entailed data acquisition
+	from CarbonMonitor CHINA, a repository that chronicles the carbon emission
+	statistics for the past five years. We amassed more than 200 thousand data points
+	spanning from January 1, 2019, to December 31, 2022, systematically segregating
+	the data into 31 distinct states and five sectors respectively.
+
+	Subsequently, we performed a rudimentary data analysis, classified according to
+	temporality, sector, and state. A review of the past four years reveals that
+	carbon emissions peaked in the year 2021. Furthermore, a substantial variation
+	in carbon emissions was discerned across different sectors. Additionally, the states
+	of Hebei and Shandong emerged as the leading contributors to the nation's carbon
+	emissions.
+
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.4\textwidth]{figures/emissions_from_5_sectors.png}
+		\caption{A graphical representation of emissions from five different sectors.}
+		\label{fig:emissions_from_5_sectors}
+	\end{figure}
+
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.4\textwidth]{figures/emissions_from_31_states.png}
+		\caption{A graphical representation of emissions from 31 different states.}
+		\label{fig:emissions_from_31_states}
+	\end{figure}
 
 	\subsection{Template Styles}
 
 
-	The primary parameter given to the ``\verb|acmart|'' document class is the
-	{\itshape template style} which corresponds to the kind of publication or SIG
-	publishing the work. This parameter is enclosed in square brackets and is a part
-	of the {\verb|documentclass|} command:
-	\begin{verbatim}
+	The primary parameter given to the ``\verb|acmart|'' document class is the {\itshape template style}
+	which corresponds to the kind of publication or SIG publishing the work. This
+	parameter is enclosed in square brackets and is a part of the
+	{\verb|documentclass|} command: \begin{verbatim}
   \documentclass[STYLE]{acmart}
 \end{verbatim}
 
-	Journals use one of three template styles. All but three ACM journals use the
-	{\verb|acmsmall|} template style:
+	Journals use one of three template styles. All but three ACM journals use the {\verb|acmsmall|}
+	template style:
 	\begin{itemize}
 		\item {\verb|acmsmall|}: The default journal template style.
 
@@ -200,8 +249,8 @@
 		\item {\verb|acmtog|}: Used by TOG.
 	\end{itemize}
 
-	The majority of conference proceedings documentation will use the
-	{\verb|acmconf|} template style.
+	The majority of conference proceedings documentation will use the {\verb|acmconf|}
+	template style.
 	\begin{itemize}
 		\item {\verb|acmconf|}: The default proceedings template style.
 
@@ -215,10 +264,10 @@
 	\subsection{Template Parameters}
 
 
-	In addition to specifying the {\itshape template style} to be used in
-	formatting your work, there are a number of {\itshape template parameters} which
-	modify some part of the applied template style. A complete list of these
-	parameters can be found in the {\itshape \LaTeX\ User's Guide.}
+	In addition to specifying the {\itshape template style} to be used in formatting
+	your work, there are a number of {\itshape template parameters} which modify
+	some part of the applied template style. A complete list of these parameters can
+	be found in the {\itshape \LaTeX\ User's Guide.}
 
 	Frequently-used parameters, or combinations of parameters, include:
 	\begin{itemize}
@@ -233,90 +282,91 @@
 		\item {\verb|screen|}: Produces colored hyperlinks.
 	\end{itemize}
 
-	This document uses the following string as the first command in the source file:
-	\begin{verbatim}
+	This document uses the following string as the first command in the source
+	file: \begin{verbatim}
 \documentclass[sigconf,authordraft]{acmart}
 \end{verbatim}
 
 	\section{Modifications}
 
 
-	Modifying the template --- including but not limited to: adjusting margins, typeface
-	sizes, line spacing, paragraph and list definitions, and the use of the
-	\verb|\vspace| command to manually adjust the vertical spacing between
-	elements of your work --- is not allowed.
+	Modifying the template --- including but not limited to: adjusting margins,
+	typeface sizes, line spacing, paragraph and list definitions, and the use of the
+	\verb|\vspace| command to manually adjust the vertical spacing between elements
+	of your work --- is not allowed.
 
 	{\bfseries Your document will be returned to you for revision if modifications are discovered.}
 
 	\section{Typefaces}
 
 
-	The ``\verb|acmart|'' document class requires the use of the ``Libertine'' typeface
-	family. Your \TeX\ installation should include this set of packages. Please do
-	not substitute other typefaces. The ``\verb|lmodern|'' and ``\verb|ltimes|''
-	packages should not be used, as they will override the built-in typeface families.
+	The ``\verb|acmart|'' document class requires the use of the ``Libertine''
+	typeface family. Your \TeX\ installation should include this set of packages.
+	Please do not substitute other typefaces. The ``\verb|lmodern|'' and ``\verb|ltimes|''
+	packages should not be used, as they will override the built-in typeface
+	families.
 
 	\section{Title Information}
 
 
-	The title of your work should use capital letters appropriately - \url{https://capitalizemytitle.com/}
-	has useful rules for capitalization. Use the {\verb|title|} command to define
-	the title of your work. If your work has a subtitle, define it with the
-	{\verb|subtitle|} command. Do not insert line breaks in your title.
+	The title of your work should use capital letters appropriately -
+	\url{https://capitalizemytitle.com/} has useful rules for capitalization. Use the
+	{\verb|title|} command to define the title of your work. If your work has a
+	subtitle, define it with the {\verb|subtitle|} command. Do not insert line
+	breaks in your title.
 
-	If your title is lengthy, you must define a short version to be used in the
-	page headers, to prevent overlapping text. The \verb|title| command has a ``short
-	title'' parameter: \begin{verbatim}
+	If your title is lengthy, you must define a short version to be used in the page
+	headers, to prevent overlapping text. The \verb|title| command has a ``short title''
+	parameter: \begin{verbatim}
   \title[short title]{full title}
 \end{verbatim}
 
 	\section{Authors and Affiliations}
 
 
-	Each author must be defined separately for accurate metadata identification. Multiple
-	authors may share one affiliation. Authors' names should not be abbreviated;
-	use full first names wherever possible. Include authors' e-mail addresses
+	Each author must be defined separately for accurate metadata identification.
+	Multiple authors may share one affiliation. Authors' names should not be
+	abbreviated; use full first names wherever possible. Include authors' e-mail addresses
 	whenever possible.
 
 	Grouping authors' names or e-mail addresses, or providing an ``e-mail alias,''
-	as shown below, is not acceptable: \begin{verbatim}
+	as shown below, is not acceptable:
+	\begin{verbatim}
   \author{Brooke Aster, David Mehldau}
   \email{dave,judy,steve@university.edu}
   \email{firstname.lastname@phillips.org}
 \end{verbatim}
 
 	The \verb|authornote| and \verb|authornotemark| commands allow a note to apply
-	to multiple authors --- for example, if the first two authors of an article contributed
-	equally to the work.
+	to multiple authors --- for example, if the first two authors of an article
+	contributed equally to the work.
 
-	If your author list is lengthy, you must define a shortened version of the
-	list of authors to be used in the page headers, to prevent overlapping text.
-	The following command should be placed just after the last \verb|\author{}|
-	definition: \begin{verbatim}
+	If your author list is lengthy, you must define a shortened version of the list
+	of authors to be used in the page headers, to prevent overlapping text. The following
+	command should be placed just after the last \verb|\author{}| definition:
+	\begin{verbatim}
   \renewcommand{\shortauthors}{McCartney, et al.}
 \end{verbatim}
-	Omitting this command will force the use of a concatenated list of all of the authors'
-	names, which may result in overlapping text in the page headers.
+	Omitting this command will force the use of a concatenated list of all of the
+	authors' names, which may result in overlapping text in the page headers.
 
-	The article template's documentation, available at
-	\url{https://www.acm.org/publications/proceedings-template}, has a complete explanation
-	of these commands and tips for their effective use.
+	The article template's documentation, available at \url{https://www.acm.org/publications/proceedings-template},
+	has a complete explanation of these commands and tips for their effective use.
 
 	Note that authors' addresses are mandatory for journal articles.
 
 	\section{Rights Information}
 
 
-	Authors of any work published by ACM will need to complete a rights form. Depending
-	on the kind of work, and the rights management choice made by the author, this
-	may be copyright transfer, permission, license, or an OA (open access)
-	agreement.
+	Authors of any work published by ACM will need to complete a rights form.
+	Depending on the kind of work, and the rights management choice made by the author,
+	this may be copyright transfer, permission, license, or an OA (open access) agreement.
 
-	Regardless of the rights management choice, the author will receive a copy of the
-	completed rights form once it has been submitted. This form contains \LaTeX\ commands
-	that must be copied into the source document. When the document source is compiled,
-	these commands and their parameters add formatted text to several areas of the
-	final document:
+	Regardless of the rights management choice, the author will receive a copy of
+	the completed rights form once it has been submitted. This form contains \LaTeX\ commands
+	that must be copied into the source document. When the document source is
+	compiled, these commands and their parameters add formatted text to several areas
+	of the final document:
 	\begin{itemize}
 		\item the ``ACM Reference Format'' text on the first page.
 
@@ -325,11 +375,11 @@
 		\item the conference information in the page header(s).
 	\end{itemize}
 
-	Rights information is unique to the work; if you are preparing several works for
-	an event, make sure to use the correct set of commands with each of the works.
+	Rights information is unique to the work; if you are preparing several works
+	for an event, make sure to use the correct set of commands with each of the works.
 
-	The ACM Reference Format text is required for all articles over one page in
-	length, and is optional for one-page articles (abstracts).
+	The ACM Reference Format text is required for all articles over one page in length,
+	and is optional for one-page articles (abstracts).
 
 	\section{CCS Concepts and User-Defined Keywords}
 
@@ -337,47 +387,47 @@
 	Two elements of the ``acmart'' document class provide powerful taxonomic tools
 	for you to help readers find your work in an online search.
 
-	The ACM Computing Classification System --- \url{https://www.acm.org/publications/class-2012}
-	--- is a set of classifiers and concepts that describe the computing discipline.
-	Authors can select entries from this classification system, via \url{https://dl.acm.org/ccs/ccs.cfm},
-	and generate the commands to be included in the \LaTeX\ source.
+	The ACM Computing Classification System ---
+	\url{https://www.acm.org/publications/class-2012} --- is a set of classifiers
+	and concepts that describe the computing discipline. Authors can select entries
+	from this classification system, via \url{https://dl.acm.org/ccs/ccs.cfm}, and
+	generate the commands to be included in the \LaTeX\ source.
 
-	User-defined keywords are a comma-separated list of words and phrases of the
-	authors' choosing, providing a more flexible way of describing the research
-	being presented.
+	User-defined keywords are a comma-separated list of words and phrases of the authors'
+	choosing, providing a more flexible way of describing the research being presented.
 
-	CCS concepts and user-defined keywords are required for for all articles over
-	two pages in length, and are optional for one- and two-page articles (or abstracts).
+	CCS concepts and user-defined keywords are required for for all articles over two
+	pages in length, and are optional for one- and two-page articles (or abstracts).
 
 	\section{Sectioning Commands}
 
 
-	Your work should use standard \LaTeX\ sectioning commands: \verb|section|,
-	\verb|subsection|, \verb|subsubsection|, and \verb|paragraph|. They should be numbered;
-	do not remove the numbering from the commands.
+	Your work should use standard \LaTeX\ sectioning commands: \verb|section|, \verb|subsection|,
+	\verb|subsubsection|, and \verb|paragraph|. They should be numbered; do not remove
+	the numbering from the commands.
 
-	Simulating a sectioning command by setting the first word or words of a
-	paragraph in boldface or italicized text is {\bfseries not allowed.}
+	Simulating a sectioning command by setting the first word or words of a paragraph
+	in boldface or italicized text is {\bfseries not allowed.}
 
 	\section{Tables}
 
 
-	The ``\verb|acmart|'' document class includes the ``\verb|booktabs|'' package ---
-	\url{https://ctan.org/pkg/booktabs} --- for preparing high-quality tables.
+	The ``\verb|acmart|'' document class includes the ``\verb|booktabs|'' package
+	--- \url{https://ctan.org/pkg/booktabs} --- for preparing high-quality tables.
 
 	Table captions are placed {\itshape above} the table.
 
-	Because tables cannot be split across pages, the best placement for them is
-	typically the top of the page nearest their initial cite. To ensure this proper
-	``floating'' placement of tables, use the environment \textbf{table} to enclose
-	the table's contents and the table caption. The contents of the table itself
-	must go in the \textbf{tabular} environment, to be aligned properly in rows
-	and columns, with the desired horizontal and vertical rules. Again, detailed instructions
-	on \textbf{tabular} material are found in the \textit{\LaTeX\ User's Guide}.
+	Because tables cannot be split across pages, the best placement for them is typically
+	the top of the page nearest their initial cite. To ensure this proper ``floating''
+	placement of tables, use the environment \textbf{table} to enclose the table's
+	contents and the table caption. The contents of the table itself must go in the
+	\textbf{tabular} environment, to be aligned properly in rows and columns, with
+	the desired horizontal and vertical rules. Again, detailed instructions on
+	\textbf{tabular} material are found in the \textit{\LaTeX\ User's Guide}.
 
 	Immediately following this sentence is the point at which Table~\ref{tab:freq}
-	is included in the input file; compare the placement of the table here with
-	the table in the printed output of this document.
+	is included in the input file; compare the placement of the table here with the
+	table in the printed output of this document.
 
 	\begin{table}
 		\caption{Frequency of Special Characters}
@@ -392,12 +442,12 @@
 		\end{tabular}
 	\end{table}
 
-	To set a wider table, which takes up the whole width of the page's live area, use
-	the environment \textbf{table*} to enclose the table's contents and the table caption.
-	As with a single-column table, this wide table will ``float'' to a location deemed
-	more desirable. Immediately following this sentence is the point at which
-	Table~\ref{tab:commands} is included in the input file; again, it is
-	instructive to compare the placement of the table here with the table in the
+	To set a wider table, which takes up the whole width of the page's live area,
+	use the environment \textbf{table*} to enclose the table's contents and the
+	table caption. As with a single-column table, this wide table will ``float''
+	to a location deemed more desirable. Immediately following this sentence is the
+	point at which Table~\ref{tab:commands} is included in the input file; again, it
+	is instructive to compare the placement of the table here with the table in the
 	printed output of this document.
 
 	\begin{table*}
@@ -412,40 +462,41 @@
 		\end{tabular}
 	\end{table*}
 
-	Always use midrule to separate table header rows from data rows, and use it
-	only for this purpose. This enables assistive technologies to recognise table headers
-	and support their users in navigating tables more easily.
+	Always use midrule to separate table header rows from data rows, and use it only
+	for this purpose. This enables assistive technologies to recognise table
+	headers and support their users in navigating tables more easily.
 
 	\section{Math Equations}
-	You may want to display math equations in three distinct styles: inline, numbered
-	or non-numbered display. Each of the three are discussed in the next sections.
+	You may want to display math equations in three distinct styles: inline,
+	numbered or non-numbered display. Each of the three are discussed in the next sections.
 
 	\subsection{Inline (In-text) Equations}
-	A formula that appears in the running text is called an inline or in-text
-	formula. It is produced by the \textbf{math} environment, which can be invoked
-	with the usual \texttt{{\char'134}begin\,\ldots{\char'134}end} construction or
-	with the short form \texttt{\$\,\ldots\$}. You can use any of the symbols and
-	structures, from $\alpha$ to $\omega$, available in \LaTeX~\cite{Lamport:LaTeX};
-	this section will simply show a few examples of in-text equations in context.
-	Notice how this equation:
+	A formula that appears in the running text is called an inline or in-text formula.
+	It is produced by the \textbf{math} environment, which can be invoked with the
+	usual \texttt{{\char'134}begin\,\ldots{\char'134}end} construction or with the
+	short form \texttt{\$\,\ldots\$}. You can use any of the symbols and structures,
+	from $\alpha$ to $\omega$, available in \LaTeX~\cite{Lamport:LaTeX}; this
+	section will simply show a few examples of in-text equations in context. Notice
+	how this equation:
 	\begin{math}
 		\lim_{n\rightarrow \infty}x=0
-	\end{math}, set here in in-line math style, looks slightly different when set in
-	display style. (See next section).
+	\end{math}, set here in in-line math style, looks slightly different when set
+	in display style. (See next section).
 
 	\subsection{Display Equations}
-	A numbered display equation---one set off by vertical space from the text and
-	centered horizontally---is produced by the \textbf{equation} environment. An
-	unnumbered display equation is produced by the \textbf{displaymath} environment.
+	A numbered display equation---one set off by vertical space from the text and centered
+	horizontally---is produced by the \textbf{equation} environment. An unnumbered
+	display equation is produced by the \textbf{displaymath} environment.
 
-	Again, in either environment, you can use any of the symbols and structures available
-	in \LaTeX\@; this section will just give a couple of examples of display equations
-	in context. First, consider the equation, shown as an inline equation above:
+	Again, in either environment, you can use any of the symbols and structures
+	available in \LaTeX\@; this section will just give a couple of examples of
+	display equations in context. First, consider the equation, shown as an inline
+	equation above:
 	\begin{equation}
 		\lim_{n\rightarrow \infty}x=0
 	\end{equation}
-	Notice how it is formatted somewhat differently in the \textbf{displaymath}
-	environment. Now, we'll enter an unnumbered equation:
+	Notice how it is formatted somewhat differently in the \textbf{displaymath} environment.
+	Now, we'll enter an unnumbered equation:
 	\begin{displaymath}
 		\sum_{i=0}^{\infty}x + 1
 	\end{displaymath}
@@ -458,9 +509,9 @@
 	\section{Figures}
 
 
-	The ``\verb|figure|'' environment should be used for figures. One or more images
-	can be placed within a figure. If your figure contains third-party material, you
-	must clearly identify it as such, as shown in the example below.
+	The ``\verb|figure|'' environment should be used for figures. One or more
+	images can be placed within a figure. If your figure contains third-party material,
+	you must clearly identify it as such, as shown in the example below.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=\linewidth]{sample-franklin}
@@ -472,29 +523,28 @@
 
 	Figure captions are placed {\itshape below} the figure.
 
-	Every figure should also have a figure description unless it is purely
-	decorative. These descriptions convey what’s in the image to someone who cannot
-	see it. They are also used by search engine crawlers for indexing images, and when
-	images cannot be loaded.
+	Every figure should also have a figure description unless it is purely decorative.
+	These descriptions convey what’s in the image to someone who cannot see it. They
+	are also used by search engine crawlers for indexing images, and when images
+	cannot be loaded.
 
-	A figure description must be unformatted plain text less than 2000 characters long
-	(including spaces).
-	{\bfseries Figure descriptions should not repeat the figure caption – their purpose is to capture important information that is not already provided in the caption or the main text of the paper.}
-	For figures that convey important and complex new information, a short text description
-	may not be adequate. More complex alternative descriptions can be placed in an
-	appendix and referenced in a short figure description. For example, provide a
-	data table capturing the information in a bar chart, or a structured list representing
-	a graph. For additional information regarding how best to write figure
-	descriptions and why doing this is so important, please see \url{https://www.acm.org/publications/taps/describing-figures/}.
+	A figure description must be unformatted plain text less than 2000 characters
+	long (including spaces). {\bfseries Figure descriptions should not repeat the figure caption – their purpose is to capture important information that is not already provided in the caption or the main text of the paper.}
+	For figures that convey important and complex new information, a short text
+	description may not be adequate. More complex alternative descriptions can be placed
+	in an appendix and referenced in a short figure description. For example, provide
+	a data table capturing the information in a bar chart, or a structured list
+	representing a graph. For additional information regarding how best to write figure
+	descriptions and why doing this is so important, please see
+	\url{https://www.acm.org/publications/taps/describing-figures/}.
 
 	\subsection{The ``Teaser Figure''}
 
 
-	A ``teaser figure'' is an image, or set of images in one figure, that are placed
-	after all author and affiliation information, and before the body of the
+	A ``teaser figure'' is an image, or set of images in one figure, that are
+	placed after all author and affiliation information, and before the body of the
 	article, spanning the page. If you wish to have such a figure in your article,
-	place the command immediately before the \verb|\maketitle| command:
-	\begin{verbatim}
+	place the command immediately before the \verb|\maketitle| command: \begin{verbatim}
   \begin{teaserfigure}
     \includegraphics[width=\textwidth]{sampleteaser}
     \caption{figure caption}
@@ -502,113 +552,141 @@
   \end{teaserfigure}
 \end{verbatim}
 
-	
- \section{Experiment}
+	\section{Experiment}
 
-In this section, we present the experiment of these three models,  AGCRN, MLP and FC-LSTM.
 
-\subsection{Evaluation Metrics
-}
-To compare the model performance, we implement MAE, MAPE and RMSE  to measure these three models. 
+	In this section, we present the experiment of these three models, AGCRN, MLP and
+	FC-LSTM.
 
-\emph{MAE:} MAE measures the average absolute difference between the predicted and actual carbon emissions. It evaluates the model's ability to make accurate predictions.
-$$
-MAE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-$$
-\emph{MAPE:} MAPE measures the average absolute percentage difference between the predicted and actual carbon emissions. It is used to evaluate the accuracy of the model's predictions relative to the actual values. 
-$$
-MAPE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} \frac{||y_i - \hat{y}_i||}{||y_i||}
-$$
+	\subsection{Evaluation Metrics }
+	To compare the model performance, we implement MAE, MAPE and RMSE to measure these
+	three models.
 
-\emph{RMSE:} RMSE is the square root of the MSE and is used to measure the standard deviation of the errors made by the model.
-$$
-RMSE(y, \hat{y}) = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
-$$
-\subsection{Simulation Results}
-In the simulation section, the parameter settings are listed in Table. \ref{Parameter settings }, we split the datasets into 70\% training data, 15\% validation data and 15\% test data. 
+	\emph{MAE:} MAE measures the average absolute difference between the predicted
+	and actual carbon emissions. It evaluates the model's ability to make accurate
+	predictions.
+	\[
+		MAE(y, \hat{y}) = \frac{1}{n}\sum_{i=1}^{n}|y_{i}- \hat{y}_{i}|
+	\]
+	\emph{MAPE:} MAPE measures the average absolute percentage difference between the
+	predicted and actual carbon emissions. It is used to evaluate the accuracy of
+	the model's predictions relative to the actual values.
+	\[
+		MAPE(y, \hat{y}) = \frac{1}{n}\sum_{i=1}^{n}\frac{||y_{i}- \hat{y}_{i}||}{||y_{i}||}
+	\]
 
-\begin{table}
+	\emph{RMSE:} RMSE is the square root of the MSE and is used to measure the
+	standard deviation of the errors made by the model.
+	\[
+		RMSE(y, \hat{y}) = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_{i}- \hat{y}_{i})^{2}}
+	\]
+	\subsection{Simulation Results}
+	In the simulation section, the parameter settings are listed in Table. \ref{Parameter
+	settings
+	}, we split the datasets into 70\% training data, 15\% validation data and 15\%
+	test data.
+
+	\begin{table}
 		\caption{Parameter settings }
 		\label{Parameter settings }
 		\begin{tabular}{cl}
-			\toprule Parameter/Setting & Value         \\
-			\midrule Tp & 1d
-           \\
-			Tr & 10d    \\
-			Loss function & L2Loss    \\
-                Optimizer & Adam    \\
-			Percentage of training data  & 70\%  \\
-                Percentage of validation data & 15\%  \\
-                Percentage of test data & 15\%    \\
-                Epochs & 100    \\
-                Number of runs & 1    \\
-            \bottomrule
-		\end{tabular}
-	\end{table}
-
-In Table. \ref{Average performance}, we exhibit the average performance comparison of different approaches.  As you can see, the AGCRN performs the best in the three methods.  MAE is 0.0151, MAPE is 2.7\% and RMSE is 0.0263.
-
-\begin{table}
-		\caption{Average performance comparison of different approaches.}
-		\label{Average performance}
-		\begin{tabular}{cccl}
-			\toprule Method & MAE   & MAPE & RMSE          \\
-			\midrule AGCRN               & $0.0151$ & $2.7\%$ & $0.0263$ \\
-			MLP                       & $0.0699$ & $8.8\%$& $0.1010$    \\
-			FC-LSTM                          & $0.5447$ & $412.7\%$& $0.4984$  \\
-			
+			\toprule Parameter/Setting    & Value  \\
+			\midrule Tp                   & 1d     \\
+			Tr                            & 10d    \\
+			Loss function                 & L2Loss \\
+			Optimizer                     & Adam   \\
+			Percentage of training data   & 70\%   \\
+			Percentage of validation data & 15\%   \\
+			Percentage of test data       & 15\%   \\
+			Epochs                        & 100    \\
+			Number of runs                & 1      \\
 			\bottomrule
 		\end{tabular}
 	\end{table}
 
+	In Table. \ref{Average performance}, we exhibit the average performance comparison
+	of different approaches. As you can see, the AGCRN performs the best in the three
+	methods. MAE is 0.0151, MAPE is 2.7\% and RMSE is 0.0263.
+
+	\begin{table}
+		\caption{Average performance comparison of different approaches.}
+		\label{Average performance}
+		\begin{tabular}{cccl}
+			\toprule Method & MAE      & MAPE      & RMSE     \\
+			\midrule AGCRN  & $0.0151$ & $2.7\%$   & $0.0263$ \\
+			MLP             & $0.0699$ & $8.8\%$   & $0.1010$ \\
+			FC-LSTM         & $0.5447$ & $412.7\%$ & $0.4984$ \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	The AGCRN model outperformed the MLP and FC-LSTM models in our experiment,
+	primarily due to its ability to capture the complex spatiotemporal
+	dependencies of carbon emissions. The graph-based convolutional neural network
+	structure of the AGCRN model enables it to extract features from the spatial and
+	temporal domains simultaneously, resulting in more accurate predictions. In contrast,
+	the MLP and FC-LSTM models are traditional machine learning models that rely
+	on linear regression and LSTM networks, respectively, to forecast carbon
+	emissions.
+
+	\subsection{Performance Evaluation }
+	In the experiment, we also visualize the prediction result and evaluate the performance,
+	as shown in Fig. \ref{fig:AGCRN} and Fig. \ref{fig:MLP}.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\columnwidth]{figures/AGCRN.png}
+		\caption{AGCRN.}
+		\label{fig:AGCRN}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\columnwidth]{figures/MLP.png}
+		\caption{MLP.}
+		\label{fig:MLP}
+	\end{figure}
+
+	From these two pictures of Guangdong carbon emission prediction, we can apparently
+	find that the AGCRN has better prediction results than MLP, which further
+	proves that the AGCRN method is more suitable for carbon emission prediction.
+
+	In conclusion, the AGCRN model's superior performance in predicting carbon emissions
+	can be attributed to its unique graph-based convolutional neural network structure,
+	which allows it to capture the intricate spatiotemporal dependencies of carbon
+	emissions. This study's findings offer valuable insights into the development of
+	more accurate and effective models for predicting carbon emissions, which can
+	inform policymakers and stakeholders in their efforts to reduce carbon
+	emissions and mitigate climate change.
+
+	\section{Conclusion and Future Work}
 
 
-The AGCRN model outperformed the MLP and FC-LSTM models in our experiment, primarily due to its ability to capture the complex spatiotemporal dependencies of carbon emissions. The graph-based convolutional neural network structure of the AGCRN model enables it to extract features from the spatial and temporal domains simultaneously, resulting in more accurate predictions. In contrast, the MLP and FC-LSTM models are traditional machine learning models that rely on linear regression and LSTM networks, respectively, to forecast carbon emissions.
+	In this course project, we presented three models, AGCRN, MLP, and FC-LSTM, for
+	predicting the daily carbon emissions of 31 Chinese provinces using historical
+	data from January 1st, 2019 to December 31st, 2022. Our results demonstrated that
+	the AGCRN model outperformed the MLP and FC-LSTM models, indicating its
+	robustness in predicting carbon emissions accurately.
 
+	The findings of this project offer a new approach to enhance the precision of
+	carbon emission prediction. The AGCRN model's superior performance can be attributed
+	to its ability to capture the complex spatial and temporal dependencies of carbon
+	emissions. Our study provides valuable insights into the development of more
+	accurate and effective models for predicting carbon emissions, which can inform
+	policymakers and stakeholders in their efforts to reduce carbon emissions and mitigate
+	climate change.
 
-\subsection{Performance Evaluation
-}
-In the experiment, we also visualize the prediction result and evaluate the performance, as shown in Fig. \ref{fig:AGCRN} and Fig. \ref{fig:MLP}.
+	\emph{Future work:} This project model can help carbon market stakeholders grasp
+	the future trend of the carbon market more accurately and provide a reference for
+	policymakers and investors in decision-making. However, the quality and availability
+	of the carbon emission data are low, which makes it hard to improve the
+	accuracy rapidly.
 
-\begin{figure}[h]
-     \centering
-     \includegraphics[width=\columnwidth]{figures/AGCRN.png}
-     \caption{AGCRN.}
-     \label{fig:AGCRN}
-\end{figure}
+	In future work, we can consider more factors to improve the accuracy of carbon
+	emission prediction such as weather, seasonality, and economic conditions.
+	What’s more, it is necessary to improve the computational complexity.
 
-\begin{figure}[h]
-     \centering
-     \includegraphics[width=\columnwidth]{figures/MLP.png}
-     \caption{MLP.}
-     \label{fig:MLP}
-\end{figure}
-
-From these two pictures of Guangdong carbon emission prediction, we can apparently find that the AGCRN has better prediction results than MLP, which further proves that the AGCRN method is more suitable for carbon emission prediction.
-
-
- In conclusion, the AGCRN model's superior performance in predicting carbon emissions can be attributed to its unique graph-based convolutional neural network structure, which allows it to capture the intricate spatiotemporal dependencies of carbon emissions. This study's findings offer valuable insights into the development of more accurate and effective models for predicting carbon emissions, which can inform policymakers and stakeholders in their efforts to reduce carbon emissions and mitigate climate change.
- 
- 
- \section{Conclusion and Future Work}
-
-In this course project, we presented three models, AGCRN, MLP, and FC-LSTM, for predicting the daily carbon emissions of 31 Chinese provinces using historical data from January 1st, 2019 to December 31st, 2022. Our results demonstrated that the AGCRN model outperformed the MLP and FC-LSTM models, indicating its robustness in predicting carbon emissions accurately.
-
-The findings of this project offer a new approach to enhance the precision of carbon emission prediction. The AGCRN model's superior performance can be attributed to its ability to capture the complex spatial and temporal dependencies of carbon emissions. Our study provides valuable insights into the development of more accurate and effective models for predicting carbon emissions, which can inform policymakers and stakeholders in their efforts to reduce carbon emissions and mitigate climate change.
-
-\emph{Future work:} This project model can help carbon market stakeholders grasp the future trend of the carbon market more accurately and provide a reference for policymakers and investors in decision-making. However, the quality and availability of the carbon emission data are low, which makes it hard to improve the accuracy rapidly.
-
-In future work, we can consider more factors to improve the accuracy of carbon emission prediction such as weather, seasonality, and economic conditions. What’s more, it is necessary to improve the computational complexity.
- 
- 
- 
- 
- 
- 
- 
- 
- 
- \section{Citations and Bibliographies}
+	\section{Citations and Bibliographies}
 
 
 	The use of \BibTeX\ for the preparation and formatting of one's references is strongly

@@ -10,3 +10,4 @@ DSAA5020_final_report.synctex.gz
 node_modules
 package.json
 yarn.lock
+formatter.sh
