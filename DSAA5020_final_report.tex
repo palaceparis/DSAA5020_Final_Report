@@ -502,7 +502,113 @@
   \end{teaserfigure}
 \end{verbatim}
 
-	\section{Citations and Bibliographies}
+	
+ \section{Experiment}
+
+In this section, we present the experiment of these three models,  AGCRN, MLP and FC-LSTM.
+
+\subsection{Evaluation Metrics
+}
+To compare the model performance, we implement MAE, MAPE and RMSE  to measure these three models. 
+
+\emph{MAE:} MAE measures the average absolute difference between the predicted and actual carbon emissions. It evaluates the model's ability to make accurate predictions.
+$$
+MAE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+$$
+\emph{MAPE:} MAPE measures the average absolute percentage difference between the predicted and actual carbon emissions. It is used to evaluate the accuracy of the model's predictions relative to the actual values. 
+$$
+MAPE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} \frac{||y_i - \hat{y}_i||}{||y_i||}
+$$
+
+\emph{RMSE:} RMSE is the square root of the MSE and is used to measure the standard deviation of the errors made by the model.
+$$
+RMSE(y, \hat{y}) = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+$$
+\subsection{Simulation Results}
+In the simulation section, the parameter settings are listed in Table. \ref{Parameter settings }, we split the datasets into 70\% training data, 15\% validation data and 15\% test data. 
+
+\begin{table}
+		\caption{Parameter settings }
+		\label{Parameter settings }
+		\begin{tabular}{cl}
+			\toprule Parameter/Setting & Value         \\
+			\midrule Tp & 1d
+           \\
+			Tr & 10d    \\
+			Loss function & L2Loss    \\
+                Optimizer & Adam    \\
+			Percentage of training data  & 70\%  \\
+                Percentage of validation data & 15\%  \\
+                Percentage of test data & 15\%    \\
+                Epochs & 100    \\
+                Number of runs & 1    \\
+            \bottomrule
+		\end{tabular}
+	\end{table}
+
+In Table. \ref{Average performance}, we exhibit the average performance comparison of different approaches.  As you can see, the AGCRN performs the best in the three methods.  MAE is 0.0151, MAPE is 2.7\% and RMSE is 0.0263.
+
+\begin{table}
+		\caption{Average performance comparison of different approaches.}
+		\label{Average performance}
+		\begin{tabular}{cccl}
+			\toprule Method & MAE   & MAPE & RMSE          \\
+			\midrule AGCRN               & $0.0151$ & $2.7\%$ & $0.0263$ \\
+			MLP                       & $0.0699$ & $8.8\%$& $0.1010$    \\
+			FC-LSTM                          & $0.5447$ & $412.7\%$& $0.4984$  \\
+			
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+
+
+The AGCRN model outperformed the MLP and FC-LSTM models in our experiment, primarily due to its ability to capture the complex spatiotemporal dependencies of carbon emissions. The graph-based convolutional neural network structure of the AGCRN model enables it to extract features from the spatial and temporal domains simultaneously, resulting in more accurate predictions. In contrast, the MLP and FC-LSTM models are traditional machine learning models that rely on linear regression and LSTM networks, respectively, to forecast carbon emissions.
+
+
+\subsection{Performance Evaluation
+}
+In the experiment, we also visualize the prediction result and evaluate the performance, as shown in Fig. \ref{fig:AGCRN} and Fig. \ref{fig:MLP}.
+
+\begin{figure}[h]
+     \centering
+     \includegraphics[width=\columnwidth]{figures/AGCRN.png}
+     \caption{AGCRN.}
+     \label{fig:AGCRN}
+\end{figure}
+
+\begin{figure}[h]
+     \centering
+     \includegraphics[width=\columnwidth]{figures/MLP.png}
+     \caption{MLP.}
+     \label{fig:MLP}
+\end{figure}
+
+From these two pictures of Guangdong carbon emission prediction, we can apparently find that the AGCRN has better prediction results than MLP, which further proves that the AGCRN method is more suitable for carbon emission prediction.
+
+
+ In conclusion, the AGCRN model's superior performance in predicting carbon emissions can be attributed to its unique graph-based convolutional neural network structure, which allows it to capture the intricate spatiotemporal dependencies of carbon emissions. This study's findings offer valuable insights into the development of more accurate and effective models for predicting carbon emissions, which can inform policymakers and stakeholders in their efforts to reduce carbon emissions and mitigate climate change.
+ 
+ 
+ \section{Conclusion and Future Work}
+
+In this course project, we presented three models, AGCRN, MLP, and FC-LSTM, for predicting the daily carbon emissions of 31 Chinese provinces using historical data from January 1st, 2019 to December 31st, 2022. Our results demonstrated that the AGCRN model outperformed the MLP and FC-LSTM models, indicating its robustness in predicting carbon emissions accurately.
+
+The findings of this project offer a new approach to enhance the precision of carbon emission prediction. The AGCRN model's superior performance can be attributed to its ability to capture the complex spatial and temporal dependencies of carbon emissions. Our study provides valuable insights into the development of more accurate and effective models for predicting carbon emissions, which can inform policymakers and stakeholders in their efforts to reduce carbon emissions and mitigate climate change.
+
+\emph{Future work:} This project model can help carbon market stakeholders grasp the future trend of the carbon market more accurately and provide a reference for policymakers and investors in decision-making. However, the quality and availability of the carbon emission data are low, which makes it hard to improve the accuracy rapidly.
+
+In future work, we can consider more factors to improve the accuracy of carbon emission prediction such as weather, seasonality, and economic conditions. What’s more, it is necessary to improve the computational complexity.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ \section{Citations and Bibliographies}
 
 
 	The use of \BibTeX\ for the preparation and formatting of one's references is strongly
