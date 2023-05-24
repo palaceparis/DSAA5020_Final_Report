@@ -217,7 +217,46 @@ emissions.
 
 In this section of the term paper, we systematically explore the technical aspects of three distinct machine learning methodologies that are used in our study: the Adaptive Graph Convolutional Recurrent Neural Network (AGCRN), Multi-Layer Perceptron (MLP), and Fully Connected Long Short-Term Memory (FC-LSTM).
 
+\subsection{Adaptive Graph Convolutional Recurrent Neural Network (AGCRN)}
 
+Carbon emissions inherently form a complex, interconnected network due to their origin from various sources and impacts on various regions. This network extends both across different regions (spatial) and over time (temporal), which makes AGCRN uniquely suited for carbon emissions prediction. During the implementation, we mainly refer to the paper \cite{bai2020-adaptivea}.
+
+AGCRN's GCN component efficiently captures the interplay between different regions, considering how the carbon footprint in one region might influence and be influenced by the emissions in other regions. Its RNN component focuses on the temporal aspect, modeling how emissions evolve over time, including trends and seasonality, which are common in environmental data. Hence, the AGCRN model provides a comprehensive, holistic perspective in carbon emissions forecasting.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/AGCRN_flow.png}
+	\caption{AGCRN workflow.}
+	\label{fig:AGCRN_flow}
+\end{figure}
+
+\subsection{Multi-Layer Perceptron (MLP)}
+
+MLP is a fundamental form of artificial neural network, effective for capturing non-linear relationships between inputs and outputs. When applied to carbon emissions prediction, the MLP model can take into account various factors influencing emissions, such as industrial production, energy consumption, population density, and others. .
+
+With its multiple layers and the capacity to learn complex mappings from inputs to outputs, MLP can model the intricate interactions between these different variables. Furthermore, the use of ReLU activation functions and dropout regularization enhances the model's ability to generalize from the training data, improving the robustness and reliability of predictions.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.15\textwidth]{figures/MLP_flow.png}
+	\caption{MLP workflow.}
+	\label{fig:MLP_flow}
+\end{figure}
+
+\subsection{Fully Connected Long Short-Term Memory (FC-LSTM)}
+
+FC-LSTM is a recurrent neural network designed to capture long-term dependencies in time-series data, which makes it ideal for carbon emissions prediction. Carbon emissions data typically consist of time-series data, with various factors influencing the emissions evolving over time. We mainly refer to the paper \cite{tao2023-multiplea}.
+
+The LSTM component, with its unique design of gating mechanisms, can efficiently learn and recall past information when needed, making it adept at modeling time-series data with long-term dependencies. These include identifying increasing or decreasing trends in emissions over the years or understanding seasonal variations. The fully connected layer helps in preserving the spatial relationships between different provinces, thereby improving the model's prediction capacity.
+
+In essence, the FC-LSTM model's ability to consider past data and its capability to model time dependencies, along with spatial relationships, makes it highly suitable for predicting future carbon emissions.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.15\textwidth]{figures/FC-LSTM_flow.png}
+	\caption{FC-LSTM workflow.}
+	\label{fig:FC-LSTM_flow}
+\end{figure}
 
 \section{Experiment}
 
